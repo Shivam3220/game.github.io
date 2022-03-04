@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUESS THE NUMBER</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Notable&display=swap');
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="heading">
+                <h1 id="title">GAME</h1>
+                <p id="chancePara">GUESS THE NUMBER BETWEEN {!-!OO}</p>
+            </div>
+
+            <div class="menu" id="menu">
+                <img id="image" src="cover.jpg" alt="" srcset="">
+                <h3>Selelt ThE MoDe !</h3>
+                <ul id="list">
+                    <li id="EASY">EASY ( IN !0 ATTEMPT )</li>
+                    <li id="Hard">MEDIUM ( IN 5 ATTEMPT )</li>
+                </ul>
+            </div>
+
+            <div id="game" class="gameNone">
+                <div class="box2">
+                <input type="number" id="userInputs" min="1" max="100">
+                <p>YOUR PREVIOUS GUESSES</p>
+                <ul id="userGuesses">
+                    <!-- populated by javascript -->
+                </ul>
+                <button id="newgame">NEW GAME</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
