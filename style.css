@@ -98,4 +98,6 @@
   border: none;
   cursor: pointer;
 }
+#userGuesses {display: flex;
+ flex-wrap: wrap;}
 
