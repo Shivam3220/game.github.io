@@ -28,6 +28,10 @@ class Game {
             // console.log(previousInput.length)
             // console.log(Number(userInputs.value))
             let input = Number(userInputs.value)
+            if(input>100||input<1){
+                chancePara.innerText = "ENTER NUMBER BETWEEN 1-100 "
+            }
+            else{
             previousInput.push(input)
             // console.log(previousInput)
             userInputs.value = ""
@@ -48,6 +52,7 @@ class Game {
                 userInputs.disabled = true;
                 losseaudio.play()
             }
+        }
 
             let html=""
             previousInput.forEach(element => {
