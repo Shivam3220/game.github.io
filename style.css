@@ -88,8 +88,9 @@
   flex-direction: column;
   justify-content: center;
 }
-#newgame{
-  width: 25%;
+button{
+  word-wrap:break-word;
+  width: 40%;
   margin: 0.5rem auto;
   border-radius: 1rem;
   padding: 0.25rem;
