@@ -23,7 +23,7 @@ let winaudio = new Audio("win.wav");
 // creating the class 
 class Game {
     // creating function to start game 
-    start(trail) {
+   start(trail) {
         let previousInput = []
         let trailLeft=trail
         // console.log(trailLeft)
@@ -32,13 +32,6 @@ class Game {
             // console.log(previousInput.length)
             // console.log(Number(userInputs.value))
             let input = Number(userInputs.value)
-            trailLeft=(trail-previousInput.length)-1
-            guessesLeft.innerText=`TRIAL LEFT = ${trailLeft}`
-            // console.log(trailLeft)
-
-
-
-
             if(input>100||input<1){
                 chancePara.innerText = "ENTER NUMBER BETWEEN 1-100 "
             }
@@ -46,6 +39,9 @@ class Game {
             previousInput.push(input)
             // console.log(previousInput)
             userInputs.value = ""
+            trailLeft=(trail-previousInput.length)
+            guessesLeft.innerText=`TRIAL LEFT = ${trailLeft}`
+            // console.log(trailLeft)
             if (input < computerNumber) {
                 chancePara.innerText = "THE NUMBER IS LOW"
             }
