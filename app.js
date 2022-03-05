@@ -1,4 +1,4 @@
-console.log(`Guess the number game`);
+// console.log(`Guess the number game`);
 
 // initialise the variable used
 let chancePara = document.getElementById("chancePara");
@@ -8,6 +8,7 @@ let userInputs = document.getElementById("userInputs");
 let newgame = document.getElementById("newgame");
 let title = document.getElementById("title");
 let userGuesses = document.getElementById("userGuesses");
+let guessesLeft = document.getElementById("guessesLeft");
 
 // generating the random Number
 let computerNumber = Math.floor(Math.random() * 100+1)
@@ -24,10 +25,20 @@ class Game {
     // creating function to start game 
     start(trail) {
         let previousInput = []
+        let trailLeft=trail
+        // console.log(trailLeft)
+        guessesLeft.innerText=`TRIAL LEFT = ${trailLeft}`
         userInputs.addEventListener("change", function (event) {
             // console.log(previousInput.length)
             // console.log(Number(userInputs.value))
             let input = Number(userInputs.value)
+            trailLeft=(trail-previousInput.length)-1
+            guessesLeft.innerText=`TRIAL LEFT = ${trailLeft}`
+            // console.log(trailLeft)
+
+
+
+
             if(input>100||input<1){
                 chancePara.innerText = "ENTER NUMBER BETWEEN 1-100 "
             }
@@ -48,7 +59,8 @@ class Game {
             }
             
             if (previousInput.length == trail) {
-                chancePara.innerText = "YOU LOSSE"
+                title.innerText = "YOU LOSSE"
+                chancePara.innerText = `THE CORRECT NO. WAS ${computerNumber}`
                 userInputs.disabled = true;
                 losseaudio.play()
             }
@@ -64,7 +76,6 @@ class Game {
     }
 
 }
-
 // easy mode
 let easyGame = document.getElementById("EASY");
 easyGame.addEventListener("click", function (event) {
