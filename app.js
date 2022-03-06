@@ -26,6 +26,7 @@ class Game {
    start(trail) {
         let previousInput = []
         let trailLeft=trail
+        let win;
         // console.log(trailLeft)
         guessesLeft.innerText=`TRIAL LEFT = ${trailLeft}`
         userInputs.addEventListener("change", function (event) {
@@ -49,19 +50,27 @@ class Game {
                 chancePara.innerText = "THE NUMBER IS HIGH"
             }
             else {
-                chancePara.innerText = "YOU WIN"
+                title.innerText = "YOU WIN"
+                chancePara.innerText = `THE CORRECT NO. IS ${computerNumber}`
                 userInputs.disabled = true;
+                win=true
                 winaudio.play()
             }
             
-            if (previousInput.length == trail) {
+            if (previousInput.length == trail && win) {
+                title.innerText = "YOU WIN"
+                chancePara.innerText = `${computerNumber} IS CORRECT`
+                userInputs.disabled = true;
+                winaudio.play()
+                
+            }
+            else if (previousInput.length == trail){
                 title.innerText = "YOU LOSSE"
                 chancePara.innerText = `THE CORRECT NO. WAS ${computerNumber}`
-                userInputs.disabled = true;
+                userInputs.disabled = true; 
                 losseaudio.play()
             }
         }
-
             let html=""
             previousInput.forEach(element => {
                 html+=`<li>${element}</li>`
